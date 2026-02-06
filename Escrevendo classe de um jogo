@@ -1,0 +1,51 @@
+// Definindo a Classe (Molde)
+class Heroi {
+    // Construtor: Onde definimos as variáveis (propriedades) do objeto
+    constructor(nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+
+    // Método (Função): A ação de atacar
+    atacar() {
+        let ataque;
+
+        // Estrutura de Decisão para definir o tipo de ataque
+        switch (this.tipo) {
+            case 'mago':
+                ataque = 'magia';
+                break;
+            case 'guerreiro':
+                ataque = 'espada';
+                break;
+            case 'monge':
+                ataque = 'artes marciais';
+                break;
+            case 'ninja':
+                ataque = 'shuriken';
+                break;
+            default:
+                ataque = 'um ataque desconhecido';
+        }
+
+        // Saída formatada usando Template String (interpolação)
+        console.log(`o ${this.tipo} atacou usando ${ataque}`);
+    }
+}
+
+// --- Área de Testes ---
+
+// Criando Objetos (Instanciando a classe)
+const heroi1 = new Heroi("Aragorn", 87, "guerreiro");
+const heroi2 = new Heroi("Gandalf", 2019, "mago");
+const heroi3 = new Heroi("Lee", 25, "monge");
+const heroi4 = new Heroi("Hanzo", 30, "ninja");
+
+// Colocando os heróis em uma lista (Array)
+const grupoDeHerois = [heroi1, heroi2, heroi3, heroi4];
+
+// Laço de Repetição: Para testar todos de uma vez
+for (let i = 0; i < grupoDeHerois.length; i++) {
+    grupoDeHerois[i].atacar();
+}
